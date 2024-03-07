@@ -1,0 +1,86 @@
+<!-- app/templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Query Interface</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Log Query Interface</h1>
+
+    <form method="post" action="{{ url_for('main.search_logs') }}">
+        <label for="level">Level:</label>
+        <input type="text" name="level">
+        <br>
+
+        <label for="message">Message:</label>
+        <input type="text" name="message">
+        <br>
+
+        <label for="resourceId">Resource ID:</label>
+        <input type="text" name="resourceId">
+        <br>
+
+        <!-- <label for="timestamp">Timestamp:</label>
+        <input type="text" name="timestamp" placeholder="YYYY-MM-DD HH:MM:SS">
+        -->
+        
+        <label for="timestamp">Timestamp:</label>
+        <input type="datetime-local" name="timestamp" id="timestamp" placeholder="YYYY-MM-DDTHH:MM">
+        <br>
+        
+
+
+        <label for="traceId">Trace ID:</label>
+        <input type="text" name="traceId">
+        <br>
+
+        <label for="spanId">Span ID:</label>
+        <input type="text" name="spanId">
+        <br>
+
+        <label for="commit">Commit:</label>
+        <input type="text" name="commit">
+        <br>
+
+        <label for="parentResourceId">Parent Resource ID:</label>
+        <input type="text" name="parentResourceId">
+        <br>
+
+        <input type="submit" value="Search">
+    </form>
+    
+
+    <div class="results">
+        <h2>MySQL Results</h2>
+        <!-- Display logs here, you can customize this based on your needs -->
+        {% if logs_sql %}
+            <ul>
+                {% for log in logs_sql %}
+                    <li>{{ log.level }} | {{ log.message }} | {{ log.resourceId }} | {{ log.timestamp }} | {{ log.traceId }} | {{ log.spanId }} | {{ log.commit }} | {{ log.parentResourceId }} </li>
+                    <hr>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No logs found</p>
+        {% endif %}
+
+        <h2>MongoDB Results</h2>
+        {% if logs_mongo %}
+            <ul>
+                {% for log in logs_mongo %}
+                <li>{{ log.level }} | {{ log.message }} | {{ log.resourceId }} | {{ log.timestamp }} | {{ log.traceId }} | {{ log.spanId }} | {{ log.commit }} | {{ log.parentResourceId }} </li>
+                <hr>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No MongoDB logs found</p>
+        {% endif %}
+    </div>
+
+
+</body>
+</html>
