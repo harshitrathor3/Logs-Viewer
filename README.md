@@ -18,6 +18,7 @@ A log ingestion system that efficiently handles vast volumes of log data and off
 
 - [Python 3.10.10](https://www.python.org/)
 - make sure you are using the same Python version otherwise you may get errors
+- Windows OS
 
   
 ### Installation
