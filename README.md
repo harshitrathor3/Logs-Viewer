@@ -25,7 +25,7 @@ A log ingestion system that efficiently handles vast volumes of log data and off
 
 Clone the repo
    ```sh
-   git clone https://github.com/your_username/log-ingestor.git
+   git clone https://github.com/username/Logs-Viewer.git
    ```
 Create virtual environment
    ```
