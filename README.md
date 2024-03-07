@@ -1,8 +1,6 @@
-# Logs-Viewer
-
 <!-- PROJECT LOGO -->
 <div align="center">
-  <h3 align="center">Log Ingestor and Query Interface</h3>
+  <h3 align="center">Logs Viewer</h3>
 </div>
 
 
@@ -55,7 +53,7 @@ py run.py
 A sample log injector file is present in the code for your reference named injesting_data_sample.py. You can simply run this script and data is automatically stored in MySQL and Mongo DB Cloud database.
 
 
-### Evaluation Criteria sorted
+### USP
 
 - Volume: Yes my system is capable of handling massive logs.
 - Speed: I have created indexed in both MySQL and MongoDB so the search results will be much faster.
@@ -81,7 +79,3 @@ I have tested the system on all sample queries.
 Please reach out to me if you face any issue in setting up the environment, running the code, understanding any part of the code, or anything else.
 <p>Email: <a href='harshitrathorelink@gmail.com'>harshitrathorelink@gmail.com</a></p>
 <p>Mobile: +91-9926546160</p>
-
-### See
-- I am really hoping to hear back from you soon.
-- I need feedback about my projects and am ready to make changes according to the feedback provided.
